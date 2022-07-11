@@ -1,0 +1,9 @@
+####
+POST http://localhost:3003/ambulnz/pizza
+Content-Type: application/json
+
+{
+   "name": "Pizza Bianca",
+    "price": 5,
+    "ingredients": ["mozzarella, oregano"]
+}
