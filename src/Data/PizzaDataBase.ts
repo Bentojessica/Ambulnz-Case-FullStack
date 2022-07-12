@@ -12,10 +12,11 @@ export class PizzaDataBase extends BaseDataBase {
                 .into(PizzaDataBase.TABLE_NAME)
 
             const arrayPizzas = pizzas.map((pizza) => {
-                return { ...pizza, ingredients: JSON.parse(pizza.ingredients) }
+                return { ...pizza, ingredients: pizza.ingredients}
             })
 
-            
+            return  arrayPizzas
+
         } catch (error: any) {
             throw new Error(error.message || error.sqlMessage);
         }
