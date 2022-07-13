@@ -1,0 +1,1 @@
+export const BASE_URL = "https://case-ambulnz.herokuapp.com/ambulnz"
