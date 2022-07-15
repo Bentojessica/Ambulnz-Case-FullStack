@@ -4,6 +4,8 @@ import axios from "axios"
 import {BASE_URL} from "../BaseUrl/BaseUrl"
 import { Order } from "../Components/Orders/Order"
 import { CardShop } from "../Components/CardShop/CardShop"
+import { Header } from "../Components/Header/Header"
+import { Footer } from "../Components/Footer/Footer"
 
 export const Feed = () => {
 
@@ -26,6 +28,7 @@ export const Feed = () => {
 
     return(
         <div>
+            <Header/>
             <CardPizza
                 card={card}
                 setCard={setCard}
@@ -41,6 +44,7 @@ export const Feed = () => {
                 setCard={setCard}
             />
             
+            <Footer/>
         </div>
     )
 }

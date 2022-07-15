@@ -5,13 +5,14 @@ export const ShopCartPage = styled.div `
     background-color: white;
     box-shadow: 4px 4px 4px gray;
     height: vh;
-    width: 20vw;
+    width: 25vw;
     opacity: 0;
     top: 40px; left: 40px;
     transition: opacity 1s, transform 1s;
     display:flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 10px;
 `
 
 export const OrdersComponent = styled.div`

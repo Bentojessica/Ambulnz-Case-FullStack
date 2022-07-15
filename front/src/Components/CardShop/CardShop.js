@@ -78,8 +78,8 @@ export const CardShop = (props) => {
 
     return (
         <ShopCartPage id="ShopCartPage">
-            <ArrowBackIosNewIcon  style={{ marginRight: '230px', cursor: 'pointer' }} onClick={() => hideShopCart()}/>
-            {card.length !== 0 ? cartCard : <Typography color="text.secondary" variant="h6">ShopCart empty </Typography>}
+            <ArrowBackIosNewIcon  style={{ cursor: 'pointer' }} onClick={() => hideShopCart()}/>
+            {card.length !== 0 ? cartCard : <Typography color="text.secondary" variant="h6">Carrinho vazio </Typography>}
             <ShoppingBasketIcon style={{marginTop: '50px', cursor: 'pointer'}} onClick={() => confirmAll()}/>
         </ShopCartPage>
     )

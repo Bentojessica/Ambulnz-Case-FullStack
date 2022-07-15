@@ -1,5 +1,6 @@
 import React from "react"
-import {OrdersComponent, OrdersCard, Button} from "./styled"
+import {OrdersComponent, OrdersCard} from "./styled"
+import { Button} from '@mui/material'
 
 export const Order = (props) => {
     
@@ -11,9 +12,9 @@ export const Order = (props) => {
     }
 
     const numberOrder = <OrdersCard id="OrderCard">
-        <Button onClick={()=> showShopCart()}>
+        <Button  size="small" color="success" variant="contained" onClick={()=> showShopCart()}>
         <div>{card.length}</div>
-             Checar suas ordens</Button>
+            Checar suas ordens</Button>
     </OrdersCard>
 
     return (

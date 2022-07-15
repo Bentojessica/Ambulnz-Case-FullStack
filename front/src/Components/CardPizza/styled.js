@@ -4,8 +4,8 @@ export const CardContainer = styled.div `
 display: inline-grid;
 grid-template-columns: auto;
 margin-left: 20px;
-margin-top: 10px;
-height: 35vh;
+margin-top: 30px;
+height: 40vh;
 width: 30vw;
 font-family: unset;
 font-size: 16px;

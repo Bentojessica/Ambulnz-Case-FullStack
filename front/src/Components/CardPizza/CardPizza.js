@@ -47,7 +47,7 @@ export const CardPizza = (props) => {
                         <Typography variant="h6" color="text.primary">
                             <p>R$ {pizza.price}</p>
                         </Typography>
-                        <Button size="small" color="success" variant="contained" onClick={() => addToCard(pizza)}>
+                        <Button size="small" color="success" variant="contained" style={{ cursor: 'pointer', marginTop: "10px" }} onClick={() => addToCard(pizza)}>
                         Adicionar no carrinho
                     </Button>
                     </CardContent>
