@@ -2,7 +2,7 @@ import React from "react"
 import CardContent from '@mui/material/CardContent';
 import{ CardContainer} from "./styled"
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material'
+import { Button} from '@mui/material'
 
 export const CardPizza = (props) => {
 
@@ -25,33 +25,32 @@ export const CardPizza = (props) => {
         }
 
         props.setCard(newCard)
-        detailsCard()
+        showDetails()
     }
 
-    const detailsCard = () => {
-        document.getElementById("ordersComponent").style.opacity = 1
-        document.getElementById("ordersComponent").style.transform = "translate(0, -50px)"
+    const showDetails = () => {
+        document.getElementById("OrdersComponent").style.opacity = 1
+        document.getElementById("OrdersComponent").style.transform = "translate(0, -50px)"
     }
+
 
     const listPizzas = pizzas && pizzas.map((pizza) => {
         return (
-            <CardContainer sx={{ maxWidth: 345 }} key={pizza.name}>
-                <CardActionArea>
+            <CardContainer key={pizza.name}>
                     <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography gutterBottom variant="h4" color="red" component="div">
                             {pizza.name}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                             {pizza.ingredients}
+                        <Typography variant="h6" color="text.secondary">
+                            {pizza.ingredients}
+                        </Typography>
+                        <Typography variant="h6" color="text.primary">
                             <p>R$ {pizza.price}</p>
                         </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions>
-                    <Button size="small" color="primary" onClick={() => addToCard(pizza)}>
+                        <Button size="small" color="success" variant="contained" onClick={() => addToCard(pizza)}>
                         Adicionar no carrinho
                     </Button>
-                </CardActions>
+                    </CardContent>
             </CardContainer>
         )
     })

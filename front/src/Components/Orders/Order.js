@@ -1,24 +1,25 @@
 import React from "react"
-import "./Order.css"
+import {OrdersComponent, OrdersCard, Button} from "./styled"
 
 export const Order = (props) => {
     
     const card = props.card
 
     const showShopCart = () => {
-        document.getElementById("shopCartPage").style.opacity = 1
-        document.getElementById("shopCartPage").style.transform = "translate(-110px, 0)"
+        document.getElementById("ShopCartPage").style.opacity = 1
+        document.getElementById("ShopCartPage").style.transform = "translate(60rem, 0)"
     }
 
-    const numberOrder = <div id="ordersCard">
-        {card.length}
-        <button onClick={()=> showShopCart()}>Checar suas ordens</button>
-    </div>
+    const numberOrder = <OrdersCard id="OrderCard">
+        <Button onClick={()=> showShopCart()}>
+        <div>{card.length}</div>
+             Checar suas ordens</Button>
+    </OrdersCard>
 
     return (
-        <div id="ordersComponent">
+        <OrdersComponent id="OrdersComponent">
             {card.length !== 0 ? numberOrder : null}
-        </div>
+        </OrdersComponent>
     )
 
 }

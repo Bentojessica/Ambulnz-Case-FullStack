@@ -1,9 +1,9 @@
-import { Feed } from "./Pages/Feed";
+import { Router } from "./Router/Routes";
 
 function App() {
   return (
     <div>
-      <Feed/>
+      <Router/>
     </div>
   );
 }

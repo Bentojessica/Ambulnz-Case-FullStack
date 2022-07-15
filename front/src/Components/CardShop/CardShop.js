@@ -1,12 +1,11 @@
 import React from "react"
 import axios from "axios"
 import { BASE_URL } from "../../BaseUrl/BaseUrl"
-import "./CardShop.css"
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+import { ShopCartPage, ContainerOrderCard } from "./styled"
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material'
 
 export const CardShop = (props) => {
 
@@ -55,30 +54,33 @@ export const CardShop = (props) => {
     }
 
     const cartCard = card && card.map((pizza) => {
-        return <div key={pizza.name}>
-            <h4>{pizza.name}</h4>
-            <h5>R${pizza.price.toFixed(2) * pizza.quantity.toFixed(2)}</h5>
-            <button onClick={() => removeFromCart(pizza)}>Remove</button>
-            <button onClick={() => findOrder(pizza)}>Confirm</button>
-        </div>
+        return <div  key={pizza.name}>
+            <ContainerOrderCard>
+            <Typography variant="h6" color="red">{pizza.name}
+            </Typography>
+            <Typography color="text.secondary">R${pizza.price.toFixed(2) * pizza.quantity.toFixed(2)} 
+            </Typography> 
+            <DeleteForeverIcon style={{ margin: '10px 10px', cursor: 'pointer' }} onClick={() => removeFromCart(pizza)} />
+            </ContainerOrderCard>
+        </div >
     })
 
     const hideShopCart = () => {
-        document.getElementById("shopCartPage").style.opacity = 0
-        document.getElementById("shopCartPage").style.transform = "translate(110px, 0)"
+        document.getElementById("ShopCartPage").style.opacity = 0
+        document.getElementById("ShopCartPage").style.transform = "translate(110px, 0)"
     }
 
     const confirmAll = () => {
-        orders.forEach((order) => {
-            order(order)
+        orders.forEach((item) => {
+            order(item)
         })
     }
 
     return (
-        <div id='shopCartPage'>
-            {card.length !== 0 ? cartCard : <h3>ShopCart empty :(</h3>}
-            <button onClick={() => hideShopCart()}>X</button>
-            <button onClick={() => confirmAll()}>Confirm All</button>
-        </div>
+        <ShopCartPage id="ShopCartPage">
+            <ArrowBackIosNewIcon  style={{ marginRight: '230px', cursor: 'pointer' }} onClick={() => hideShopCart()}/>
+            {card.length !== 0 ? cartCard : <Typography color="text.secondary" variant="h6">ShopCart empty </Typography>}
+            <ShoppingBasketIcon style={{marginTop: '50px', cursor: 'pointer'}} onClick={() => confirmAll()}/>
+        </ShopCartPage>
     )
 }
